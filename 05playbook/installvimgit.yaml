@@ -1,7 +1,8 @@
 ---
-- hosts: servers
+- hosts: webservers
   become: true
   tasks:
   - name: Install Package
-    yum: name=vim,git state=latest
+    apt: name=vim,git state=latest
     #User needs to be root because this require root privilege to install
+    when: ansible_distribution in ["Ubuntu"]

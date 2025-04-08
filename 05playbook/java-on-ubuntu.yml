@@ -1,5 +1,5 @@
 ---
-- hosts: My_Group
+- hosts: all
   tasks:
     - name: Task - 1 Update APT package manager repositories cache
       become: true
@@ -13,4 +13,4 @@
       vars:
         packages:
 #           - openjdk-11-jdk
-           - openjdk-8-jdk
+           - openjdk-17-jdk
